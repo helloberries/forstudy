@@ -15,6 +15,20 @@
 .current {
   z-index: 100;
   display: block;
+
+  &.out {
+    transition: transform 400ms;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+.next {
+  display: block;
+  transform: translate3d(-100%, 0, 0);
+
+  &.in {
+    transition: transform 400ms;
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 header {
