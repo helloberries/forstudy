@@ -4,13 +4,28 @@
     <meta charset="utf-8">
     <meta name ="viewport" content ="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
     <title>learn webapp</title>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
-    <h1>hello world</h1>
-    <div class="view current out">
-      <h1>hello worlds</h1>
+    <!-- 任务分类 -->
+    <div class="view current">
+      <header class="bg-royalblue">to-do</header>
+      <ul class="list-group">
+        <li class="list-group-item todo-category">任务分类1</li>
+        <li class="list-group-item todo-category">任务分类2</li>
+        <li class="list-group-item todo-category">任务分类3</li>
+      </ul>
     </div>
-    <div class="view next in"></div>
+    <!-- 任务 -->
+    <div class="view" id="todo1">
+      <header class="bg-pinks">to-do</header>
+      <ul class="list-group">
+        <li class="list-group-item">任务1</li>
+        <li class="list-group-item">任务2</li>
+        <li class="list-group-item">任务3</li>
+      </ul>
+    </div>
+    <script src="js/scripts.js" charset="utf-8"></script>
   </body>
 </html>
