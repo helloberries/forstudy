@@ -5,14 +5,18 @@
     <meta name ="viewport" content ="initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no">
     <title>learn webapp</title>
     <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/jquery-mobile/1.4.5/jquery.mobile.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mythinput.css">
   </head>
   <body>
     <!-- 任务分类 -->
     <div class="view current">
       <header class="bg-royalblue">
-        <span class="sidebar-btn"><i class="fa fa-navicon"></i></span>
+        <div class="sidenav-btn" id="sidenav-btn">
+          <input type="checkbox" id="tm">
+          <i class="fa fa-navicon"></i>
+        </div>
         <p>to-do</p>
       </header>
       <ul class="list-group">
@@ -31,8 +35,39 @@
       </ul>
     </div>
     <!-- 侧边栏 -->
-    <div class="sidebar"></div>
-    <div class="scroller"></div>
+    <ul class="sidenav" id="sidenav">
+      <li>
+        <a href="#">
+          <i class="fa fa-check"></i>
+          <b>Tasks</b>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-inbox"></i>
+          <b>Messages</b>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-pencil"></i>
+          <b>New Post</b>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-cog"></i>
+          <b>Settings</b>
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <i class="fa fa-star"></i>
+          <b>Starred</b>
+        </a>
+      </li>
+    </ul>
+    <script src="//cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
     <script src="js/scripts.js" charset="utf-8"></script>
   </body>
 </html>

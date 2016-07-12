@@ -49,6 +49,16 @@ header {
     &:hover {
       cursor: pointer;
     }
+    & input {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }
 .bg-royalblue {
@@ -60,16 +70,35 @@ header {
 
 // 侧边栏
 .sidenav {
-  background: rgb(50, 60, 60);
-  width: 150px;
   position: absolute;
+  width: 150px;
+  height: 100%;
+  z-index: 100;
   left: 0;
   top: 0;
   bottom: 0;
-  padding-top: 100px;
+  opacity: 0;
+  background: #41b9e1;
+
 
   & a {
     color: white;
     text-decoration: none;
+  }
+  & i{
+    display: block;
+    width: 50px;
+    float: left;
+    font-size: 16px;
+    line-height: 48px;
+    text-align: center;
+  }
+  & b {
+    display: block;
+    font-size: 12px;
+    line-height: 48px;
+    opacity: 1;
+    transform: translateX(10px);
+    transition: all .4s;
   }
 }

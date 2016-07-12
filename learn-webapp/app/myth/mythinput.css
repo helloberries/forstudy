@@ -1,3 +1,9 @@
+:root{
+  --green: #09b3a7;
+  --red: #ee6363;
+  --transformtime: 400ms;
+}
+
 * {
   margin: 0;
   padding: 0; }
@@ -10,22 +16,21 @@ ul, li {
   top: 0;
   left: 0;
   z-index: 99;
-  display: none;
   width: 100%;
-  height: 100%; }
+  }
 
 .current {
   z-index: 100;
   display: block; }
   .current.out {
-    transition: transform 400ms;
+    transition: transform var(--transformtime);
     transform: translate3d(-100%, 0, 0); }
 
 .next {
   display: block;
   transform: translate3d(-100%, 0, 0); }
   .next.in {
-    transition: transform 400ms;
+    transition: transform var(--transformtime);
     transform: translate3d(0, 0, 0); }
 
 header {
@@ -49,10 +54,10 @@ header {
         cursor: pointer; }
 
 .bg-royalblue {
-  background-color: royalblue; }
+  background-color: var(--red) tint(20%); }
 
 .bg-pink {
-  background-color: pink; }
+  background-color: var(--green); }
 
 .sidenav {
   position: absolute;

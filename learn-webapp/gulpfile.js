@@ -13,11 +13,21 @@ var gulp_concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
 var cache = require('gulp-cache');
 var ghPages = require('gulp-gh-pages');
+var myth = require('gulp-myth');
 
 
 gulp.task('sass', function() {
   return gulp.src('app/scss/**/*.scss') // Gets all files ending with .scss in app/scss
     .pipe(sass())
+    .pipe(gulp.dest('app/css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
+gulp.task('myth', function () {
+  return gulp.src('app/myth/**/*.css')
+    .pipe(myth())
     .pipe(gulp.dest('app/css'))
     .pipe(browserSync.reload({
       stream: true
@@ -87,10 +97,11 @@ gulp.task('deploy', function() {
     .pipe(ghPages());
 });
 
-gulp.task('serve', ['browserSync', 'images', 'useref', 'autoprefixer', 'sass', 'js', 'jade', 'html'], function (){
+gulp.task('serve', ['browserSync', 'images', 'useref', 'autoprefixer', 'myth', 'sass', 'js', 'jade', 'html'], function (){
+  gulp.watch('app/myth/**/*.css', ['myth']);
   gulp.watch('app/scss/**/*.scss', ['sass']);
   gulp.watch('app/js/*.js', ['js']);
-  gulp.watch('app/jade/**/*.jade', ['jade'])
+  gulp.watch('app/jade/**/*.jade', ['jade']);
   gulp.watch('app/*.html', ['html']);
   // Other watchers
 })
